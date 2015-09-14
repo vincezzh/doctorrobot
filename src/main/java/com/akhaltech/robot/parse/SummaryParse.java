@@ -80,6 +80,7 @@ public class SummaryParse {
             Element summaryDiv = document.getElementById("profile-content");
             Elements detailsDivs = summaryDiv.select("div[class=detail]");
             Doctor doctor = new Doctor();
+            doctor.set_id(id);
             if (detailsDivs.size() > 0) {
                 doctor.setProfile(parseProfile(id, detailsDivs.get(0)));
             }
