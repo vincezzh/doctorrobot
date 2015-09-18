@@ -44,8 +44,8 @@ public class DoctorRobot {
     private HttpContext localContext = null;
     private String cookieString = null;
     private char[] keyword = null;
-    private char[] startKeyword = {'c', 'l', 'l', 'd'};
-    private char[] endKeyword = {'c', 'z', 'z', 'z'};
+    private char[] startKeyword = {'d', 'a', 'q', 'r'};
+    private char[] endKeyword = {'d', 'z', 'z', 'z'};
     private int searchRound = 0;
 
     public DoctorRobot() {
