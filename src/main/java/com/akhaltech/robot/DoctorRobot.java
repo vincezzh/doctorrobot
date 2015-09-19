@@ -44,8 +44,10 @@ public class DoctorRobot {
     private HttpContext localContext = null;
     private String cookieString = null;
     private char[] keyword = null;
-    private char[] startKeyword = {'d', 'a', 'q', 'r'};
-    private char[] endKeyword = {'d', 'z', 'z', 'z'};
+    private char[] startKeywordTwo = {'b', 'j'};
+    private char[] endKeywordTwo = {'c', 'z'};
+    private char[] startKeywordFour = {'d', 'a', 'q', 'r'};
+    private char[] endKeywordFour = {'d', 'z', 'z', 'z'};
     private int searchRound = 0;
 
     public DoctorRobot() {
@@ -59,7 +61,10 @@ public class DoctorRobot {
         try {
             boolean loop = true;
             while(loop) {
-                String searchKeyword = generateSearchKeyword();
+                // Keyword with 4 letters
+//                String searchKeyword = generateSearchKeywordFour();
+                // Keyword with 2 letters
+                String searchKeyword = generateSearchKeywordTwo();
                 if(searchKeyword != null) {
                     log.info("========== Grabing keyword: " + searchKeyword);
                     accessInitialPage();
@@ -70,7 +75,8 @@ public class DoctorRobot {
                 }
             }
 
-//            String searchKeyword = "Allen";
+            // Search with one word
+//            String searchKeyword = "co";
 //            accessInitialPage();
 //            accessBridgePage(searchKeyword);
 //            accessSearchResultPage(searchKeyword);
@@ -305,21 +311,38 @@ public class DoctorRobot {
         return paramList;
     }
 
-    public String generateSearchKeyword() {
+    private String generateSearchKeywordTwo() {
         if(keyword == null) {
-            keyword = startKeyword;
+            keyword = startKeywordTwo;
+        }else {
+            keyword[1]++;
+            if (keyword[1] > endKeywordTwo[1]) {
+                keyword[1] = 'a';
+                keyword[0]++;
+                if (keyword[0] > endKeywordTwo[0]) {
+                    return null;
+                }
+            }
+        }
+
+        return String.valueOf(keyword[0]) + String.valueOf(keyword[1]);
+    }
+
+    private String generateSearchKeywordFour() {
+        if(keyword == null) {
+            keyword = startKeywordFour;
         }else {
             keyword[3]++;
-            if (keyword[3] > endKeyword[3]) {
+            if (keyword[3] > endKeywordFour[3]) {
                 keyword[3] = 'a';
                 keyword[2]++;
-                if (keyword[2] > endKeyword[2]) {
+                if (keyword[2] > endKeywordFour[2]) {
                     keyword[2] = 'a';
                     keyword[1]++;
-                    if (keyword[1] > endKeyword[1]) {
+                    if (keyword[1] > endKeywordFour[1]) {
                         keyword[1] = 'a';
                         keyword[0]++;
-                        if (keyword[0] > endKeyword[0]) {
+                        if (keyword[0] > endKeywordFour[0]) {
                             return null;
                         }
                     }
@@ -342,7 +365,7 @@ public class DoctorRobot {
 
 //        boolean loop = true;
 //        while(loop) {
-//            String keyword = dr.generateSearchKeyword();
+//            String keyword = dr.generateSearchKeywordTwo();
 //            System.out.println(keyword);
 //            if(keyword == null)
 //                loop = false;
