@@ -7,13 +7,13 @@ import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.impl.client.BasicCookieStore;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.cookie.BasicClientCookie;
 import org.apache.http.message.BasicNameValuePair;
@@ -39,15 +39,15 @@ public class DoctorRobot {
 
     private Map<String, Boolean> doctorIDMap = new HashMap<String, Boolean>();
 
-    private HttpClient httpClient = null;
+    private CloseableHttpClient httpClient = null;
     private BasicCookieStore cookies = null;
     private HttpContext localContext = null;
     private String cookieString = null;
     private char[] keyword = null;
-    private char[] startKeywordTwo = {'k', 'c'};
+    private char[] startKeywordTwo = {'a', 'a'};
     private char[] endKeywordTwo = {'z', 'z'};
-    private char[] startKeywordFour = {'d', 'a', 'q', 'r'};
-    private char[] endKeywordFour = {'d', 'z', 'z', 'z'};
+    private char[] startKeywordFour = {'a', 'a', 'a', 'a'};
+    private char[] endKeywordFour = {'z', 'z', 'z', 'z'};
     private int searchRound = 0;
 
     public DoctorRobot() {
@@ -62,9 +62,9 @@ public class DoctorRobot {
             boolean loop = true;
             while(loop) {
                 // Keyword with 4 letters
-//                String searchKeyword = generateSearchKeywordFour();
+                String searchKeyword = generateSearchKeywordFour();
                 // Keyword with 2 letters
-                String searchKeyword = generateSearchKeywordTwo();
+//                String searchKeyword = generateSearchKeywordTwo();
                 if(searchKeyword != null) {
                     log.info("========== Grabing keyword: " + searchKeyword);
                     accessInitialPage();
@@ -76,13 +76,14 @@ public class DoctorRobot {
             }
 
             // Search with one word
-//            String searchKeyword = "co";
+//            String searchKeyword = "Meunier";
 //            accessInitialPage();
 //            accessBridgePage(searchKeyword);
 //            accessSearchResultPage(searchKeyword);
         }catch(Exception e) {
-            log.info(e.getMessage());
+            log.error(e.getMessage());
         }
+
     }
 
     private void accessInitialPage() throws Exception {
@@ -225,7 +226,7 @@ public class DoctorRobot {
                         SummaryParse summaryParse = new SummaryParse(doctorIDMap);
                         summaryParse.accessSummary(Constant.BASE_URL + href);
                     } catch (Exception e) {
-                        log.info("========== Got ERROR then Skip Doctor: " + doctor);
+                        log.error("========== Got ERROR then Skip Doctor: " + doctor);
                         recordAttensionInfomation("Got ERROR then Skip Doctor: " + doctor);
                         e.printStackTrace();
                     }
@@ -282,7 +283,7 @@ public class DoctorRobot {
 
             startToProcessResultSet(htmlBuilder.toString(), searchKeyword);
         }catch(Exception e) {
-            log.info(e.getMessage());
+            log.error(e.getMessage());
             recordAttensionInfomation("Access next page ERROR, Keyword : " + searchKeyword);
         }finally {
             if (httpPost != null) {

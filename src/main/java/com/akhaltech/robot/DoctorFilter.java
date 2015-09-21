@@ -23,10 +23,10 @@ public class DoctorFilter {
         try {
             ObjectMapper mapper = new ObjectMapper();
 //            Doctor[] doctors = mapper.readValue(new File(Constant.JSON_OUTPUT), Doctor[].class);
-            Doctor[] doctors = mapper.readValue(new File("/Users/vince/Temp/DoctorRobot/doctors_test.json"), Doctor[].class);
+            Doctor[] doctors = mapper.readValue(new File("/Users/vince/Downloads/doctors.json"), Doctor[].class);
             filterDuplication(doctors);
         }catch (Exception e) {
-            log.info(e.getMessage());
+            log.error(e.getMessage());
         }
     }
 
@@ -43,7 +43,7 @@ public class DoctorFilter {
                         savedDoctorMap.put(doctor.getProfile().getId(), true);
                     }
                 }catch (Exception e) {
-                    log.info(e.getMessage());
+                    log.error(e.getMessage());
                     recordAttensionInfomation("Doctor<" + doctor.getProfile().getId() + "> " + doctor.getProfile().getSurname() + ", " + doctor.getProfile().getGivenName() + ": got ERROR while filtering");
                 }
             }
