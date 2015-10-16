@@ -8,6 +8,8 @@ import java.util.List;
 public class Doctor {
     private String _id;
     private String status;
+    private String province;
+    private String country;
     private Profile profile;
     private Location location;
     private Registration registration;
@@ -68,5 +70,21 @@ public class Doctor {
 
     public void setPrivilegeList(List<Privilege> privilegeList) {
         this.privilegeList = privilegeList;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }

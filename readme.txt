@@ -1,1 +1,1 @@
-./mongoimport --db doctornearby --collection doctor --type json --file ~/Documents/workspaceT/doctorrobot/doctors_20150921.json --jsonArray
+./mongoimport --db doctornearby --collection doctor --type json --file ~/Documents/workspaceT/doctorrobot/json/doctors_20151016.json --jsonArray
