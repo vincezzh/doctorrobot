@@ -13,4 +13,7 @@ public class Constant {
     public static final String BRIDGE_URL = BASE_URL + "/Public-Register/All-Doctors-Search.aspx";
     public static final String DOCTOR_SEARCH_URL = BASE_URL + "/Public-Register-Info-(1)/Doctor-Search-Results";
     public static final String DOCTOR_SEARCH_NEXT_PAGE_URL = BASE_URL + "/Public-Register-Info-(1)/Doctor-Search-Results.aspx";
+
+    public static final String BASE_URL_BC = "https://www.cpsbc.ca";
+    public static final String INITIAL_DOCTOR_SEARCH_URL_BC = BASE_URL_BC + "/physician_search";
 }
