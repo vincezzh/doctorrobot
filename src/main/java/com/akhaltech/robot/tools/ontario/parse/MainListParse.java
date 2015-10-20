@@ -1,4 +1,4 @@
-package com.akhaltech.robot.parse;
+package com.akhaltech.robot.tools.ontario.parse;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

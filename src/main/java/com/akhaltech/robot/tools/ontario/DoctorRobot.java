@@ -2,7 +2,7 @@ package com.akhaltech.robot.tools.ontario;
 
 import com.akhaltech.robot.common.Constant;
 import com.akhaltech.robot.common.FileUtil;
-import com.akhaltech.robot.parse.SummaryParse;
+import com.akhaltech.robot.tools.ontario.parse.SummaryParse;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

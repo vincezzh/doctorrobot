@@ -28,4 +28,13 @@ public class StringUtil {
         return value;
     }
 
+    public static boolean containsDitital(String content) {
+        for (int n=0 ; n<content.length(); n++) {
+            if (Character.isDigit(content.charAt(n))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
