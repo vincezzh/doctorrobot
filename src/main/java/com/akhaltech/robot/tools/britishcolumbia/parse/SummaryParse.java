@@ -20,7 +20,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
 
 /**
  * Created by vince on 2015-09-08.
@@ -29,7 +28,6 @@ public class SummaryParse {
 
     private final static Logger log = Logger.getLogger(SummaryParse.class);
     private HttpClient httpClient = null;
-    private Pattern pattern = Pattern.compile("([0-9])");
 
     private ObjectMapper mapper = new ObjectMapper();
     private String referalURL;
