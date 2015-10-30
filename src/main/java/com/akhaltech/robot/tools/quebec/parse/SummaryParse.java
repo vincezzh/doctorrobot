@@ -178,7 +178,7 @@ public class SummaryParse {
                     if(addressSummary != null)
                         addressSummary = addressSummary.replace("&nbsp;", " ");
                 }else if(contactText.equals(header)) {
-                    contactSummary = "Phone:" + tds.get(1).text().trim();
+                    contactSummary = "Phone:" + tds.get(1).text().trim().replace("#", "Ext.");
                 }
             }
         }
