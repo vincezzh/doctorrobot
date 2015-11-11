@@ -37,8 +37,8 @@ public class DoctorRobot {
     private HttpContext localContext = null;
     private String[] params;
     private char[] keyword = null;
-    private char[] startKeywordTwo = {'a', 'b'};
-    private char[] endKeywordTwo = {'a', 'b'};
+    private char[] startKeywordTwo = {'a', 'a'};
+    private char[] endKeywordTwo = {'z', 'z'};
     private int currentPage = 0;
 
     public DoctorRobot() throws Exception {

@@ -108,7 +108,7 @@ public class SummaryParse {
         String formerName = null;
         String gender = null;
         List<String> languageList = new ArrayList<String>();
-        languageList.add("English");
+        languageList.add("ENGLISH");
 
         for(Element div : divs) {
             String textInB = div.select("b").first().text();
@@ -124,7 +124,7 @@ public class SummaryParse {
             }else if(languageText.equals(textInB)) {
                 Elements languageElements = div.select("ul").select("li");
                 for(Element languageElement : languageElements) {
-                    languageList.add(languageElement.text());
+                    languageList.add(languageElement.text().toUpperCase());
                 }
             }
         }

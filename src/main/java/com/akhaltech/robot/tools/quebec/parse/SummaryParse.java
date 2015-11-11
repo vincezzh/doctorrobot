@@ -100,8 +100,8 @@ public class SummaryParse {
         String formerName = null;
         String gender = null;
         List<String> languageList = new ArrayList<String>();
-        languageList.add("English");
-        languageList.add("French");
+        languageList.add("ENGLISH");
+        languageList.add("FRENCH");
 
         for(int i=0; i<trs.size(); i++) {
             Element tr = trs.get(i);
