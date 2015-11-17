@@ -23,11 +23,13 @@ public class Constant {
     public static final String INITIAL_DOCTOR_SEARCH_URL_BC = BASE_URL_BC + "/physician_search";
     public static final String JSON_OUTPUT_BC = FILE_OUTPUT_BASE_PATH + "/doctors_bc.json";
     public static final String ATTENSION_OUTPUT_BC = FILE_OUTPUT_BASE_PATH + "/attension_bc.txt";
+    public static final String JSON_OUTPUT_FINAL_BC = FILE_OUTPUT_BASE_PATH + "/doctors_final_bc.json";
 
     // Quebec
     public static final String BASE_URL_QC = "http://www.cmq.org";
     public static final String INITIAL_DOCTOR_SEARCH_URL_QC = BASE_URL_QC + "/bottin/list.aspx?lang=en";
     public static final String JSON_OUTPUT_QC = FILE_OUTPUT_BASE_PATH + "/doctors_qc.json";
     public static final String ATTENSION_OUTPUT_QC = FILE_OUTPUT_BASE_PATH + "/attension_qc.txt";
+    public static final String JSON_OUTPUT_FINAL_QC = FILE_OUTPUT_BASE_PATH + "/doctors_final_qc.json";
 
 }
