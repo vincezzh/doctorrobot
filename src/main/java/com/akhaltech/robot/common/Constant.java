@@ -6,7 +6,7 @@ package com.akhaltech.robot.common;
 public class Constant {
     public static final String[] ALOOP = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
 
-    public static final String FILE_OUTPUT_BASE_PATH = "/Users/vince/Temp/DoctorRobot";
+    public static final String FILE_OUTPUT_BASE_PATH = "C:/temp/json/error";
 
     // Ontario
     public static final String JSON_OUTPUT = FILE_OUTPUT_BASE_PATH + "/doctors_on.json";

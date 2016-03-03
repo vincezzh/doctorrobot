@@ -1,0 +1,46 @@
+<querys>
+    <query id="saveDoctor">
+        INSERT INTO doctor (_id, status, province, country, profile_id, location_id, registration_id)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+    </query>
+
+    <query id="saveProfile">
+        INSERT INTO profile (given_name, surname, former_name, gender)
+            VALUES (?, ?, ?, ?)
+    </query>
+
+    <query id="saveLanguage">
+        INSERT INTO language (profile_id, language)
+            VALUES (?, ?)
+    </query>
+
+    <query id="saveLocation">
+        INSERT INTO location (address_summary, contact_summary, electoral_district, corporation_name, medical_Licenses_in_other_jurisdictions)
+            VALUES (?, ?, ?, ?, ?)
+    </query>
+
+    <query id="saveRegistration">
+        INSERT INTO registration (registration_class, certificate_issued, registration_status, effective_from, expiry_date, graduated_from, year_of_graduation, terms_and_conditions)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    </query>
+
+    <query id="saveRegistrationHistory">
+        INSERT INTO registration_history (registration_id, description, effectiveDate)
+            VALUES (?, ?, ?)
+    </query>
+
+    <query id="savePostgraduateTraining">
+        INSERT INTO postgraduate_training (registration_id, type, discipline, medical_school, `from`, `to`)
+            VALUES (?, ?, ?, ?, ?, ?)
+    </query>
+
+    <query id="savePrivilege">
+        INSERT INTO privilege (doctor_id, hospital_detail)
+            VALUES (?, ?)
+    </query>
+
+    <query id="saveSpecialty">
+        INSERT INTO specialty (doctor_id, name, issue_on, type)
+            VALUES (?, ?, ?, ?)
+    </query>
+</querys>
